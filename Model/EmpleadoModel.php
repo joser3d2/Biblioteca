@@ -17,12 +17,12 @@ class EmpleadoModel{
             $stmt->bindParam(":dpi", $datos['dpi'], \PDO::PARAM_STR);
             $stmt->bindParam(":rol" , $datos['rol'], \PDO::PARAM_STR);
             $stmt->bindParam(":fkEst",$datos['fkEstado'], \PDO::PARAM_INT);
-           //print_r($datos); 
+          
 
             return $stmt->execute() ? true : false;
         }catch( \Throwable $th){
-            //echo "Mensaje de Error: " . $th->getMessage();
-            return false;
+            //echo "Mensaje de Error: " . $th->getMessage(); 
+           return false;
         }
     }
     Public static function mostrarEmpleado(){
@@ -50,7 +50,7 @@ class EmpleadoModel{
         return $stmt->execute() ? true : false;
     }
     public static function borrarEmpleado($idEmp){
-        $stmt = ConexionModel::conectar()->prepare("SELECT * FROM Empelado where idEmp = :id");
+        $stmt = ConexionModel::conectar()->prepare("SELECT * FROM empleado where idEmp = :id");
         $stmt->bindParam(':id',$idEmp,\PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch();//1 reg. Fetch

@@ -1,7 +1,9 @@
 <?php 
 
 use Controller\EmpleadoController;
+use Controller\EstadoController;
 
+$estado = new EstadoController();
 $nombre = new EmpleadoController();
 
 $registro = $nombre->editar();
@@ -42,8 +44,14 @@ $nombre->actualizar();
         <div class="form-group">
             <fieldset>
                 <label class="form-label mt-4" for="readOnlyInput">Estado</label>
-                <input class="form-control" id="readOnlyInput" type="number" name="fkEstado" placeholder="Ingrese el estado del Empleado..." value="<?php echo $registro['fkEstado']; ?>" required>
-              
+                <!--<input class="form-control" id="readOnlyInput" type="number" name="fkEstado" placeholder="Ingrese el estado del Empleado..." required>-->
+                <select class="form-select" name="idEstado" value="<?php echo $registro['fkEstado']; ?>">
+                            <?php 
+                                foreach($estado->mostrar() as $row => $item){
+                                    echo "<option value='{$item['idEstado']}'>{$item['estado']}</option>";
+                                }
+                            ?>
+                </select>
             </fieldset>
         </div>
 

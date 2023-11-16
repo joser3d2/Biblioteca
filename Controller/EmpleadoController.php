@@ -8,7 +8,7 @@ class EmpleadoController{
 
     public function Cempleado(){
 
-        if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['dpi']) && !empty($_POST['rol']) && !empty($_POST['fkEstado'])){
+        if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['dpi']) && !empty($_POST['rol']) && !empty($_POST['idEstado'])){
             $datos = array(
                 "nombre" => $_POST['nombre'],
                 "apellido" => $_POST['apellido'],
@@ -16,8 +16,9 @@ class EmpleadoController{
                 "direccion" => $_POST['direccion'],
                 "dpi" => $_POST['dpi'],
                 "rol" => $_POST['rol'],
-                "fkEstado" => $_POST['fkEstado']
+                "fkEstado" => $_POST['idEstado']
             );
+            print_r($datos);
             $respuesta = EmpleadoModel::guardarEmpleado($datos);
             return $respuesta ? "guardado" : "error";
         }
@@ -32,7 +33,7 @@ class EmpleadoController{
         return $idEmp;
     }
     public function actualizar(){
-        if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['dpi']) && !empty($_POST['rol']) && !empty($_POST['fkEstado']) ){
+        if(!empty($_POST['nombre'])){
             $datos = array(
                 "idEmp" => $_POST['idEmp'],
                 "nombre" => $_POST['nombre'],
@@ -41,7 +42,8 @@ class EmpleadoController{
                 "direccion" => $_POST['direccion'],
                 "dpi" => $_POST['dpi'],
                 "rol" => $_POST['rol'],
-                "fkEstado" => $_POST['fkEstado']
+                "fkEstado" => $_POST['idEstado']
+                
             );
             $respuesta = EmpleadoModel::actualizarEmpleado($datos);
 

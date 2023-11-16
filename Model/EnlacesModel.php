@@ -29,8 +29,9 @@ class EnlacesModel{
             "EmpleadoEditar" => "View/Empleado/EmpleadoEditar.php",
             "EmpleadoEliminar" => "View/Empleado/EmpleadoEliminar.php",
             "EmpleadoMostrar" => "View/Empleado/EmpleadoMostrar.php",
-            "login" => "View/login.php",
-            "logout" => "View/logout.php",
+            "Registro" => "View/Usuario/Registro.php",
+            "Login" => "View/Usuario/Login.php",
+            "Logout" => "View/Usuario/Logout.php",
             default => "View/error.php"
         };
         return $modulo;
