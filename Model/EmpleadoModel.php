@@ -8,14 +8,14 @@ class EmpleadoModel{
 
     public static function guardarEmpleado($datos){
         try{
-            $stmt = ConexionModel::conectar()->prepare("INSERT INTO empleado (nombre, apellido,telefono,direccion,dpi,rol,fkEstado)
+            $stmt = ConexionModel::conectar()->prepare("INSERT INTO empleado (nombre, apellido,telefono,direccion,dpi,fkEstado)
              VALUES (:nom, :ape, :tel, :direc, :dpi, :rol, :fkEst)");
             $stmt->bindParam(":nom", $datos['nombre'], \PDO::PARAM_STR);
             $stmt->bindParam(":ape" , $datos['apellido'], \PDO::PARAM_STR);
             $stmt->bindParam(":tel", $datos['telefono'], \PDO::PARAM_STR);
             $stmt->bindParam(":direc" , $datos['direccion'], \PDO::PARAM_STR);
             $stmt->bindParam(":dpi", $datos['dpi'], \PDO::PARAM_STR);
-            $stmt->bindParam(":rol" , $datos['rol'], \PDO::PARAM_STR);
+           // $stmt->bindParam(":rol" , $datos['rol'], \PDO::PARAM_STR);
             $stmt->bindParam(":fkEst",$datos['fkEstado'], \PDO::PARAM_INT);
           
 
@@ -38,13 +38,13 @@ class EmpleadoModel{
 
     }
     public static function actualizarEmpleado($datos){
-        $stmt = ConexionModel::conectar()->prepare("UPDATE empleado SET nombre = :nom, apellido = :ape, telefono = :tel, direccion = :direc, dpi = :dpi, rol = :rol, fkEstado = :fkEst WHERE idEmp = :id");
+        $stmt = ConexionModel::conectar()->prepare("UPDATE empleado SET nombre = :nom, apellido = :ape, telefono = :tel, direccion = :direc, dpi = :dpi, fkEstado = :fkEst WHERE idEmp = :id");
         $stmt->bindParam(":nom",$datos['nombre'], \PDO::PARAM_STR);
         $stmt->bindParam(":ape",$datos['apellido'], \PDO::PARAM_STR);
         $stmt->bindParam(":tel",$datos['telefono'], \PDO::PARAM_STR);
         $stmt->bindParam(":direc",$datos['direccion'], \PDO::PARAM_STR);
         $stmt->bindParam(":dpi",$datos['dpi'], \PDO::PARAM_STR);
-        $stmt->bindParam(":rol",$datos['rol'], \PDO::PARAM_STR);
+        //$stmt->bindParam(":rol",$datos['rol'], \PDO::PARAM_STR);
         $stmt->bindParam(":fkEst",$datos['fkEstado'], \PDO::PARAM_STR);
         $stmt->bindParam(':id',$datos['idEmp'], \PDO::PARAM_INT);
         return $stmt->execute() ? true : false;

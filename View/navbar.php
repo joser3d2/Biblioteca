@@ -11,6 +11,7 @@
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Autor</a>
           <div class="dropdown-menu">
@@ -44,6 +45,7 @@
           <a class="nav-link" href="index.php?action=Logout">Cerrar Sesion</a>
         </li>
       </ul>
+      
       <div class="dropstart">
           <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"aria-expanded="false">Usuarios  <i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i></button>
               <ul class="dropdown-menu">

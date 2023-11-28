@@ -8,14 +8,13 @@ class EmpleadoController{
 
     public function Cempleado(){
 
-        if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['dpi']) && !empty($_POST['rol']) && !empty($_POST['idEstado'])){
+        if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['dpi']) && !empty($_POST['idEstado'])){
             $datos = array(
                 "nombre" => $_POST['nombre'],
                 "apellido" => $_POST['apellido'],
                 "telefono" => $_POST['telefono'],
                 "direccion" => $_POST['direccion'],
                 "dpi" => $_POST['dpi'],
-                "rol" => $_POST['rol'],
                 "fkEstado" => $_POST['idEstado']
             );
             print_r($datos);
@@ -41,7 +40,6 @@ class EmpleadoController{
                 "telefono" => $_POST['telefono'],
                 "direccion" => $_POST['direccion'],
                 "dpi" => $_POST['dpi'],
-                "rol" => $_POST['rol'],
                 "fkEstado" => $_POST['idEstado']
                 
             );

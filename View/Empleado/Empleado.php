@@ -59,14 +59,6 @@ $nombre = new EmpleadoController();
                 <input class="form-control" id="readOnlyInput" type="text" name="dpi" placeholder="Ingrese el DPI del Empleado..." required>
             </fieldset>
         </div>
-
-        <div class="form-group">
-            <fieldset>
-                <label class="form-label mt-4" for="readOnlyInput">Rol</label>
-                <input class="form-control" id="readOnlyInput" type="text" name="rol" placeholder="Ingrese el Rol del Empleado..." required>
-            </fieldset>
-        </div>
-
         <div class="form-group">
             <div class="d-grid gap-2 mt-3">
                 <button class="btn btn-primary" type="submit">Crear Empleado</button>
